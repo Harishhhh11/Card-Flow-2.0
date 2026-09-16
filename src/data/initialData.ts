@@ -1,0 +1,118 @@
+import { FlowColumn, FlowCard, Tag } from '../types';
+
+export const INITIAL_TAGS: Tag[] = [
+  { id: 'tag-frontend', name: 'Frontend', color: 'text-sky-700', bgColor: 'bg-sky-50 border-sky-200' },
+  { id: 'tag-backend', name: 'Backend', color: 'text-violet-700', bgColor: 'bg-violet-50 border-violet-200' },
+  { id: 'tag-design', name: 'Design', color: 'text-pink-700', bgColor: 'bg-pink-50 border-pink-200' },
+  { id: 'tag-infra', name: 'Infra', color: 'text-emerald-700', bgColor: 'bg-emerald-50 border-emerald-200' },
+  { id: 'tag-docs', name: 'Docs', color: 'text-amber-700', bgColor: 'bg-amber-50 border-amber-200' },
+];
+
+export const INITIAL_COLUMNS: FlowColumn[] = [
+  { id: 'col-backlog', title: 'Backlog', color: 'bg-zinc-100 text-zinc-700 border-zinc-200', wipLimit: 10 },
+  { id: 'col-todo', title: 'To Do', color: 'bg-blue-50 text-blue-700 border-blue-200', wipLimit: 6 },
+  { id: 'col-progress', title: 'In Progress', color: 'bg-amber-50 text-amber-700 border-amber-200', wipLimit: 4 },
+  { id: 'col-review', title: 'Review & QA', color: 'bg-purple-50 text-purple-700 border-purple-200', wipLimit: 4 },
+  { id: 'col-done', title: 'Completed', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+];
+
+export const INITIAL_CARDS: FlowCard[] = [
+  {
+    id: 'card-1',
+    title: 'Design Card Flow Interaction System',
+    description: 'Establish fluid card transitions, drag gestures, and visual column drop indicators.',
+    columnId: 'col-progress',
+    priority: 'high',
+    tags: ['Frontend', 'Design'],
+    dueDate: '2026-09-20',
+    assignee: 'Alex Morgan',
+    checklist: [
+      { id: 'chk-1', text: 'Column drop target highlight styling', completed: true },
+      { id: 'chk-2', text: 'Smooth card position re-ordering animations', completed: true },
+      { id: 'chk-3', text: 'Keyboard navigation shortcuts between columns', completed: false },
+    ],
+    createdAt: new Date(Date.now() - 3600000 * 24 * 2).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'card-2',
+    title: 'Implement Local Workflow Persistence',
+    description: 'Safely sync card states, columns, and custom user fields to local storage with auto-recovery.',
+    columnId: 'col-progress',
+    priority: 'urgent',
+    tags: ['Frontend', 'Infra'],
+    dueDate: '2026-09-18',
+    assignee: 'Elena Chen',
+    checklist: [
+      { id: 'chk-4', text: 'Serialize card metadata to JSON schema', completed: true },
+      { id: 'chk-5', text: 'Create fallback initial seed data', completed: true },
+      { id: 'chk-6', text: 'Add export / import workspace backup', completed: false },
+    ],
+    createdAt: new Date(Date.now() - 3600000 * 24 * 3).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'card-3',
+    title: 'Setup Workflow WIP Limit Indicators',
+    description: 'Warn users when in-flight cards in a column exceed the configured Work In Progress threshold.',
+    columnId: 'col-todo',
+    priority: 'medium',
+    tags: ['Frontend'],
+    dueDate: '2026-09-25',
+    assignee: 'Jordan Lee',
+    checklist: [
+      { id: 'chk-7', text: 'Add WIP limit badge in column header', completed: true },
+      { id: 'chk-8', text: 'Subtle warning tint when column is at capacity', completed: false },
+    ],
+    createdAt: new Date(Date.now() - 3600000 * 24 * 4).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'card-4',
+    title: 'Prepare Release Documentation & Shortcuts',
+    description: 'Document the Card Flow workflow mechanics and create accessible keyboard command reference.',
+    columnId: 'col-backlog',
+    priority: 'low',
+    tags: ['Docs'],
+    dueDate: '2026-10-01',
+    assignee: 'Taylor Vance',
+    checklist: [
+      { id: 'chk-9', text: 'Draft overview of flow columns', completed: false },
+      { id: 'chk-10', text: 'List keyboard navigation hotkeys', completed: false },
+    ],
+    createdAt: new Date(Date.now() - 3600000 * 24 * 5).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'card-5',
+    title: 'Core Architecture & Project Bootstrap',
+    description: 'Initialize clean React + TypeScript + Tailwind bundle with responsive flex layout.',
+    columnId: 'col-done',
+    priority: 'high',
+    tags: ['Infra'],
+    dueDate: '2026-09-16',
+    assignee: 'Alex Morgan',
+    checklist: [
+      { id: 'chk-11', text: 'Configure Vite & TypeScript build pipeline', completed: true },
+      { id: 'chk-12', text: 'Establish design tokens and font typography', completed: true },
+    ],
+    createdAt: new Date(Date.now() - 3600000 * 24 * 7).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'card-6',
+    title: 'Card Quick Filter & Search Bar',
+    description: 'Search cards in real-time by title, description, priority, or tags with active match count.',
+    columnId: 'col-review',
+    priority: 'medium',
+    tags: ['Frontend'],
+    dueDate: '2026-09-19',
+    assignee: 'Elena Chen',
+    checklist: [
+      { id: 'chk-13', text: 'Search input with clear button', completed: true },
+      { id: 'chk-14', text: 'Priority and tag pills multi-select', completed: true },
+    ],
+    createdAt: new Date(Date.now() - 3600000 * 24 * 1).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+];
