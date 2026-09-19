@@ -53,8 +53,9 @@ export const CardItem: React.FC<CardItemProps> = ({
   onDeleteCard,
   onDragStart,
 }) => {
-  const completedChecklist = card.checklist.filter((item) => item.completed).length;
-  const totalChecklist = card.checklist.length;
+  const checklistItems = card.checklist || [];
+  const completedChecklist = checklistItems.filter((item: any) => item.completed).length;
+  const totalChecklist = checklistItems.length;
   const checklistPercent = totalChecklist > 0 ? Math.round((completedChecklist / totalChecklist) * 100) : 0;
   const priorityInfo = PRIORITY_STYLES[card.priority];
 

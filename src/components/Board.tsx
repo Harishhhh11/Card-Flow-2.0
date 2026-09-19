@@ -29,24 +29,27 @@ export const Board: React.FC<BoardProps> = ({
   // Filter cards according to active search, priority, tag
   const filteredCards = cards.filter((card) => {
     // Search query filter
-    if (filters.search.trim() !== '') {
-      const q = filters.search.toLowerCase();
-      const matchTitle = card.title.toLowerCase().includes(q);
-      const matchDesc = card.description.toLowerCase().includes(q);
-      const matchTags = card.tags.some((t) => t.toLowerCase().includes(q));
-      const matchAssignee = card.assignee?.toLowerCase().includes(q);
+    const searchTerm = (filters.search || filters.searchQuery || '').trim().toLowerCase();
+    if (searchTerm !== '') {
+      const matchTitle = card.title.toLowerCase().includes(searchTerm);
+      const matchDesc = (card.description || '').toLowerCase().includes(searchTerm);
+      const matchTags = (card.tags || []).some((t: any) =>
+        (typeof t === 'string' ? t : t?.name || '').toLowerCase().includes(searchTerm)
+      );
+      const matchAssignee = (card.assignee || '').toLowerCase().includes(searchTerm);
       if (!matchTitle && !matchDesc && !matchTags && !matchAssignee) {
         return false;
       }
     }
 
     // Priority filter
-    if (filters.priority !== 'all' && card.priority !== filters.priority) {
+    if (filters.priority && filters.priority !== 'all' && card.priority !== filters.priority) {
       return false;
     }
 
     // Tag filter
-    if (filters.tag !== 'all' && !card.tags.includes(filters.tag)) {
+    const activeTag = filters.tag || filters.tagId;
+    if (activeTag && activeTag !== 'all' && !(card.tags || []).includes(activeTag)) {
       return false;
     }
 
@@ -54,7 +57,9 @@ export const Board: React.FC<BoardProps> = ({
   });
 
   const isFilterActive =
-    filters.search.trim() !== '' || filters.priority !== 'all' || filters.tag !== 'all';
+    ((filters.search || filters.searchQuery || '').trim() !== '') ||
+    (filters.priority && filters.priority !== 'all') ||
+    ((filters.tag || filters.tagId) && (filters.tag || filters.tagId) !== 'all');
 
   return (
     <main id="board-container" className="flex-1 overflow-x-auto p-4 sm:p-6 lg:p-8">

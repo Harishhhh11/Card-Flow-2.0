@@ -26,7 +26,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   totalCards,
   filteredCardsCount,
 }) => {
-  const isFiltered = filters.search.trim() !== '' || filters.priority !== 'all' || filters.tag !== 'all';
+  const currentSearch = filters.search || filters.searchQuery || '';
+  const isFiltered = currentSearch.trim() !== '' || filters.priority !== 'all' || (filters.tag && filters.tag !== 'all');
 
   return (
     <div id="filter-bar" className="bg-white border-b border-neutral-200/80 px-4 sm:px-6 lg:px-8 py-3.5">
@@ -37,14 +38,14 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <input
             id="card-search-input"
             type="text"
-            value={filters.search}
-            onChange={(e) => onFilterChange({ search: e.target.value })}
+            value={currentSearch}
+            onChange={(e) => onFilterChange({ search: e.target.value, searchQuery: e.target.value })}
             placeholder="Search cards by title, tag, or description..."
             className="w-full pl-9 pr-8 py-1.5 text-sm bg-neutral-50 border border-neutral-300 rounded-lg placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 focus:bg-white transition"
           />
-          {filters.search && (
+          {currentSearch && (
             <button
-              onClick={() => onFilterChange({ search: '' })}
+              onClick={() => onFilterChange({ search: '', searchQuery: '' })}
               className="absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
             >
               <X className="w-3.5 h-3.5" />

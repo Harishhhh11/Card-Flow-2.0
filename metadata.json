@@ -1,6 +1,6 @@
 {
-  "name": "Card Flow",
-  "description": "Visual card workflow and task management board for tracking cards across customizable stages.",
-  "requestFramePermissions": [],
+  "name": "CardFlow AI",
+  "description": "AI-powered business card scanner, contact CRM, and Google Sheets sync platform with Telugu & Indic OCR support.",
+  "requestFramePermissions": ["camera"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

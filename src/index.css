@@ -5,3 +5,670 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes scanLaserGpu {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate3d(0, 220px, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.85;
+  }
+}
+
+@keyframes scanLaserGpuFast {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(0, 220px, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes hudBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-scan-laser {
+  animation: scanLaserGpu 2.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-scan-laser-fast {
+  animation: scanLaserGpuFast 1.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-radar-ping {
+  animation: radarPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.animate-hud-blink {
+  animation: hudBlink 1.2s ease-in-out infinite;
+}
+
+.scan-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+}
+
+.extracting-grid-pattern {
+  background-size: 16px 16px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.2) 1px, transparent 1px);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.25), 0 0 30px rgba(99, 102, 241, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.45), 0 0 45px rgba(99, 102, 241, 0.2);
+  }
+}
+
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.4s infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2.8s ease-in-out infinite;
+}
+
+.animate-float-subtle {
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+.animate-soft-pulse {
+  animation: softPulse 2s ease-in-out infinite;
+}
+
+/* Modern clean scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.8);
+}
+
+/* Glassmorphic border highlights */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+/* Advanced Cyber Tech Styles */
+.cyber-panel {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 29, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  position: relative;
+}
+
+.cyber-panel:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 12px 40px -8px rgba(99, 102, 241, 0.18), 0 0 20px rgba(99, 102, 241, 0.1);
+}
+
+.cyber-panel-cyan {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(8, 20, 32, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.cyber-panel-cyan:hover {
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 12px 40px -8px rgba(6, 182, 212, 0.22);
+}
+
+.cyber-panel-emerald {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(6, 26, 20, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.cyber-panel-emerald:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 12px 40px -8px rgba(16, 185, 129, 0.22);
+}
+
+/* Neon Glow Utilities */
+.neon-glow-indigo {
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.45);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.45);
+}
+
+.neon-glow-emerald {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.45);
+}
+
+/* Futuristic HUD Corner Accents */
+.tech-bracket-container {
+  position: relative;
+}
+
+.tech-bracket-container::before,
+.tech-bracket-container::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: rgba(99, 102, 241, 0.6);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.tech-bracket-container::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.tech-bracket-container::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+.tech-bracket-container:hover::before,
+.tech-bracket-container:hover::after {
+  width: 14px;
+  height: 14px;
+  border-color: rgba(6, 182, 212, 0.9);
+}
+
+/* Futuristic Scanline Overlay */
+@keyframes holographicWave {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+.hologram-shimmer {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(99, 102, 241, 0.08) 25%,
+    rgba(6, 182, 212, 0.15) 50%,
+    rgba(168, 85, 247, 0.08) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 200%;
+  animation: holographicWave 6s linear infinite;
+}
+
+/* Glowing text gradients */
+.tech-gradient-text {
+  background: linear-gradient(135deg, #e2e8f0 0%, #818cf8 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tech-gradient-emerald {
+  background: linear-gradient(135deg, #e2e8f0 0%, #34d399 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   LIGHT THEME OVERRIDES (Crisp White Theme)
+   Assumes existing theme as dark theme, and provides clean light/white theme
+   ========================================================================== */
+
+html.theme-light,
+html.light {
+  color-scheme: light;
+}
+
+html.theme-light body,
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Backgrounds */
+html.theme-light .bg-\[\#080C16\],
+html.theme-light .bg-\[\#040D0A\],
+html.theme-light .bg-\[\#0A071B\],
+html.theme-light .bg-\[\#0F172A\],
+html.light .bg-\[\#080C16\],
+html.light .bg-\[\#040D0A\],
+html.light .bg-\[\#0A071B\],
+html.light .bg-\[\#0F172A\] {
+  background-color: #f8fafc !important;
+}
+
+html.theme-light .bg-slate-950,
+html.theme-light .bg-slate-950\/95,
+html.theme-light .bg-slate-950\/90,
+html.theme-light .bg-slate-950\/85,
+html.theme-light .bg-slate-950\/80,
+html.theme-light .bg-slate-950\/70,
+html.theme-light .bg-slate-950\/60,
+html.theme-light .bg-slate-950\/50,
+html.theme-light .bg-slate-950\/40,
+html.light .bg-slate-950,
+html.light .bg-slate-950\/95,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/85,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/50,
+html.light .bg-slate-950\/40 {
+  background-color: #ffffff !important;
+}
+
+html.theme-light .bg-slate-900,
+html.theme-light .bg-slate-900\/95,
+html.theme-light .bg-slate-900\/90,
+html.theme-light .bg-slate-900\/80,
+html.theme-light .bg-slate-900\/70,
+html.theme-light .bg-slate-900\/60,
+html.theme-light .bg-slate-900\/50,
+html.theme-light .bg-slate-900\/40,
+html.light .bg-slate-900,
+html.light .bg-slate-900\/95,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/40 {
+  background-color: #ffffff !important;
+}
+
+html.theme-light .bg-slate-800,
+html.theme-light .bg-slate-800\/90,
+html.theme-light .bg-slate-800\/80,
+html.theme-light .bg-slate-800\/70,
+html.theme-light .bg-slate-800\/60,
+html.theme-light .bg-slate-800\/50,
+html.light .bg-slate-800,
+html.light .bg-slate-800\/90,
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/70,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/50 {
+  background-color: #f1f5f9 !important;
+}
+
+html.theme-light .hover\:bg-slate-800:hover,
+html.theme-light .hover\:bg-slate-800\/80:hover,
+html.theme-light .hover\:bg-slate-800\/50:hover,
+html.theme-light .hover\:bg-slate-700:hover,
+html.theme-light .hover\:bg-slate-700\/80:hover,
+html.theme-light .hover\:bg-slate-700\/90:hover,
+html.light .hover\:bg-slate-800:hover,
+html.light .hover\:bg-slate-800\/80:hover,
+html.light .hover\:bg-slate-800\/50:hover,
+html.light .hover\:bg-slate-700:hover,
+html.light .hover\:bg-slate-700\/80:hover,
+html.light .hover\:bg-slate-700\/90:hover {
+  background-color: #e2e8f0 !important;
+}
+
+/* Borders in Light Theme */
+html.theme-light .border-slate-800,
+html.theme-light .border-slate-800\/80,
+html.theme-light .border-slate-800\/60,
+html.theme-light .border-slate-700,
+html.theme-light .border-slate-700\/80,
+html.theme-light .border-slate-700\/60,
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/60,
+html.light .border-slate-700,
+html.light .border-slate-700\/80,
+html.light .border-slate-700\/60 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Cyber panels & Glass panels in Light Theme */
+html.theme-light .cyber-panel,
+html.theme-light .glass-panel,
+html.theme-light .cyber-panel-cyan,
+html.theme-light .cyber-panel-emerald,
+html.theme-light .cyber-panel-glow,
+html.light .cyber-panel,
+html.light .glass-panel,
+html.light .cyber-panel-cyan,
+html.light .cyber-panel-emerald,
+html.light .cyber-panel-glow {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.theme-light .cyber-panel:hover,
+html.theme-light .glass-panel:hover,
+html.light .cyber-panel:hover,
+html.light .glass-panel:hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Typography in Light Theme */
+html.theme-light body,
+html.light body {
+  color: #0f172a !important;
+}
+
+/* Primary Action Buttons (Indigo, Cyan, Emerald, Rose, Blue, Gradients) - ALWAYS White Text & Icons */
+html.theme-light .bg-indigo-600,
+html.theme-light .bg-indigo-500,
+html.theme-light .bg-cyan-600,
+html.theme-light .bg-cyan-500,
+html.theme-light .bg-emerald-600,
+html.theme-light .bg-emerald-500,
+html.theme-light .bg-rose-600,
+html.theme-light .bg-blue-600,
+html.theme-light [class*="bg-gradient-"],
+html.light .bg-indigo-600,
+html.light .bg-indigo-500,
+html.light .bg-cyan-600,
+html.light .bg-cyan-500,
+html.light .bg-emerald-600,
+html.light .bg-emerald-500,
+html.light .bg-rose-600,
+html.light .bg-blue-600,
+html.light [class*="bg-gradient-"] {
+  color: #ffffff !important;
+}
+
+html.theme-light .bg-indigo-600 *,
+html.theme-light .bg-indigo-500 *,
+html.theme-light .bg-cyan-600 *,
+html.theme-light .bg-cyan-500 *,
+html.theme-light .bg-emerald-600 *,
+html.theme-light .bg-emerald-500 *,
+html.theme-light .bg-rose-600 *,
+html.theme-light .bg-blue-600 *,
+html.light .bg-indigo-600 *,
+html.light .bg-indigo-500 *,
+html.light .bg-cyan-600 *,
+html.light .bg-cyan-500 *,
+html.light .bg-emerald-600 *,
+html.light .bg-emerald-500 *,
+html.light .bg-rose-600 *,
+html.light .bg-blue-600 * {
+  color: #ffffff;
+}
+
+/* Secondary & Neutral Buttons in Light Theme - Bright Slate/White with Dark Readable Text */
+html.theme-light button.bg-slate-950,
+html.theme-light button.bg-slate-900,
+html.theme-light button.bg-slate-900\/90,
+html.theme-light button.bg-slate-800,
+html.theme-light button.bg-slate-800\/90,
+html.theme-light button.bg-slate-800\/80,
+html.theme-light button.bg-slate-800\/60,
+html.light button.bg-slate-950,
+html.light button.bg-slate-900,
+html.light button.bg-slate-900\/90,
+html.light button.bg-slate-800,
+html.light button.bg-slate-800\/90,
+html.light button.bg-slate-800\/80,
+html.light button.bg-slate-800\/60 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html.theme-light button.bg-slate-950 *,
+html.theme-light button.bg-slate-900 *,
+html.theme-light button.bg-slate-800 *,
+html.light button.bg-slate-950 *,
+html.light button.bg-slate-900 *,
+html.light button.bg-slate-800 * {
+  color: #0f172a !important;
+}
+
+html.theme-light button.bg-slate-900:hover,
+html.theme-light button.bg-slate-900\/90:hover,
+html.theme-light button.bg-slate-800:hover,
+html.theme-light button.bg-slate-800\/80:hover,
+html.light button.bg-slate-900:hover,
+html.light button.bg-slate-900\/90:hover,
+html.light button.bg-slate-800:hover,
+html.light button.bg-slate-800\/80:hover {
+  background-color: #e2e8f0 !important;
+  color: #4338ca !important;
+  border-color: #94a3b8 !important;
+}
+
+/* General Text Overrides in Light Theme (excluding colored buttons) */
+html.theme-light .text-white:not([class*="bg-indigo-"]):not([class*="bg-cyan-"]):not([class*="bg-emerald-"]):not([class*="bg-rose-"]):not([class*="bg-blue-"]):not([class*="bg-gradient-"]),
+html.theme-light .text-slate-100:not([class*="bg-indigo-"]):not([class*="bg-cyan-"]):not([class*="bg-emerald-"]):not([class*="bg-rose-"]),
+html.theme-light .text-slate-200:not([class*="bg-indigo-"]):not([class*="bg-cyan-"]):not([class*="bg-emerald-"]):not([class*="bg-rose-"]),
+html.light .text-white:not([class*="bg-indigo-"]):not([class*="bg-cyan-"]):not([class*="bg-emerald-"]):not([class*="bg-rose-"]):not([class*="bg-blue-"]):not([class*="bg-gradient-"]),
+html.light .text-slate-100:not([class*="bg-indigo-"]):not([class*="bg-cyan-"]):not([class*="bg-emerald-"]):not([class*="bg-rose-"]),
+html.light .text-slate-200:not([class*="bg-indigo-"]):not([class*="bg-cyan-"]):not([class*="bg-emerald-"]):not([class*="bg-rose-"]) {
+  color: #0f172a;
+}
+
+html.theme-light .text-slate-300,
+html.light .text-slate-300 {
+  color: #1e293b !important;
+}
+
+html.theme-light .text-slate-400,
+html.light .text-slate-400 {
+  color: #334155 !important;
+}
+
+html.theme-light .text-slate-500,
+html.light .text-slate-500 {
+  color: #475569 !important;
+}
+
+/* Sidebar Nav Active Button Text Rule - Always pure white for maximum readability */
+.sidebar-nav-active,
+.sidebar-nav-active *,
+html.theme-light .sidebar-nav-active,
+html.theme-light .sidebar-nav-active *,
+html.light .sidebar-nav-active,
+html.light .sidebar-nav-active * {
+  color: #ffffff !important;
+}
+
+/* Form Inputs in Light Theme */
+html.theme-light input:not([type="checkbox"]):not([type="radio"]),
+html.theme-light textarea,
+html.theme-light select,
+html.light input:not([type="checkbox"]):not([type="radio"]),
+html.light textarea,
+html.light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.theme-light input::placeholder,
+html.theme-light textarea::placeholder,
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Scrollbars in Light Theme */
+html.theme-light ::-webkit-scrollbar-track,
+html.light ::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.8) !important;
+}
+
+html.theme-light ::-webkit-scrollbar-thumb,
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5) !important;
+}
+
+html.theme-light ::-webkit-scrollbar-thumb:hover,
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.8) !important;
+}
+
+/* Gradients in Light Theme */
+html.theme-light .tech-gradient-text,
+html.light .tech-gradient-text {
+  background: linear-gradient(135deg, #0f172a 0%, #4338ca 50%, #0284c7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Tinted containers in Light Theme */
+html.theme-light .bg-cyan-950\/40,
+html.theme-light .bg-cyan-950\/50,
+html.theme-light .bg-cyan-950\/70,
+html.light .bg-cyan-950\/40,
+html.light .bg-cyan-950\/50,
+html.light .bg-cyan-950\/70 {
+  background-color: #ecfeff !important;
+  border-color: #a5f3fc !important;
+  color: #0e7490 !important;
+}
+
+html.theme-light .bg-emerald-950\/40,
+html.theme-light .bg-emerald-950\/60,
+html.theme-light .bg-emerald-950\/70,
+html.theme-light .bg-emerald-950\/80,
+html.light .bg-emerald-950\/40,
+html.light .bg-emerald-950\/60,
+html.light .bg-emerald-950\/70,
+html.light .bg-emerald-950\/80 {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #047857 !important;
+}
+
+html.theme-light .bg-indigo-950\/40,
+html.theme-light .bg-indigo-950\/50,
+html.theme-light .bg-indigo-950\/70,
+html.light .bg-indigo-950\/40,
+html.light .bg-indigo-950\/50,
+html.light .bg-indigo-950\/70 {
+  background-color: #eef2ff !important;
+  border-color: #c7d2fe !important;
+  color: #4338ca !important;
+}
+
+html.theme-light .bg-amber-950\/80,
+html.theme-light .bg-amber-950\/50,
+html.light .bg-amber-950\/80,
+html.light .bg-amber-950\/50 {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+}
+
+html.theme-light .bg-rose-950\/70,
+html.theme-light .bg-rose-950\/50,
+html.light .bg-rose-950\/70,
+html.light .bg-rose-950\/50 {
+  background-color: #fff1f2 !important;
+  border-color: #fecdd3 !important;
+  color: #be123c !important;
+}
+
+
+

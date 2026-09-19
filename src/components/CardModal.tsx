@@ -92,7 +92,7 @@ export const CardModal: React.FC<CardModalProps> = ({
     const updated: FlowCard = {
       ...card,
       title: title.trim(),
-      description: description.trim(),
+      description: (description || '').trim(),
       columnId,
       priority,
       dueDate: dueDate || undefined,
